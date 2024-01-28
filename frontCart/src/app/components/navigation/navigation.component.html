@@ -1,0 +1,15 @@
+<div class="navigation">
+    <div class="nav-route"><a [routerLink]="['home']">Home</a></div>
+    <div *ngIf="!auth; else elseBlock">
+        <span class="nav-route"><a [routerLink]="['login']">Login</a></span>
+        <span class="nav-route"><a [routerLink]="['register']">Registration</a></span>
+    </div>
+    <ng-template #elseBlock>
+        <div class="nav-route"><a [routerLink]="['products']">Products</a></div>
+        <div class="nav-route"><a [routerLink]="['cart']">My Cart</a></div>
+        <div class="nav-route"><a [routerLink]="['profile']">Profile</a></div>
+        <div class="nav-route"><a (click)="handleLogout()">LOGOUT</a></div>
+    </ng-template>
+</div>
+
+

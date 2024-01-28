@@ -1,0 +1,41 @@
+.products {
+    display: flex;
+    justify-content: center;
+}
+
+.products table{
+    margin: 80px;
+}
+
+.products tr{
+    font-size: large;
+    text-align: left;
+}
+
+.products th, td {
+    padding: 8px;
+}
+
+.productsMessage{
+    font-size: 18px;
+    background-color: orange;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 300px;
+}
+
+.productsToOrder{
+    padding: 10px;
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+}
+
+.btnEnabled{
+    opacity : 1;
+}
+
+.btnDisabled{
+    opacity: 0.3;
+}
+

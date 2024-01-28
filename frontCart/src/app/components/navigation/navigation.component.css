@@ -1,0 +1,12 @@
+.navigation{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-route{
+    padding: 10px 30px;
+    background-color: rgb(206, 195, 195);
+    border: 5px solid rgb(0, 0, 0);
+}

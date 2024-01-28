@@ -1,0 +1,13 @@
+<div class="orders" *ngIf="ordersList; else ordersMissing">
+    <div class="orderTab" *ngFor="let order of ordersList">
+        <p>Order No: {{order.orderId}}<p>
+        <p>Order Date: {{order.placedAt | date:'short'}}<p></p>
+        <p>Total Price: {{order.totalPrice.toFixed(2)}} €</p>
+        <button class="btn-info" (click)="toProductDetails(order.orderId)">Details</button>
+        <button class="btn-delete" (click)="handleDelete(order.orderId)">DELETE</button>
+    </div>
+</div>
+
+<ng-template #ordersMissing>
+    The cart is empty.
+</ng-template>

@@ -1,0 +1,20 @@
+
+<div class="products" *ngIf="productList; else productsMissing">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let product of productList">
+            <td>{{product.name}}</td>
+            <td>{{product.price}} €</td>
+            <td><button (click)="addProduct(product)">Add to Order</button></td>
+        </tr>
+    </table>
+    
+</div>
+<ng-template #productsMissing>
+    No products available.
+</ng-template>
+<div class="productsMessage" [hidden]="isMessageHidden">{{message}}</div>
+<div><button class="productsToOrder" (click)="submitOrder()" [disabled]="disabled" [ngClass]="disabled ? 'btnDisabled' : 'btnEnabled'">CREATE ORDER</button></div>

@@ -1,0 +1,36 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+
+    <p>
+        <label for="username">Username </label>
+        <input type="text" id="username" name="username" formControlName="username">
+    </p>
+
+    <div
+        *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
+        <div [hidden]="!username?.errors?.['required']">
+            Username is required
+        </div>
+    </div>
+
+    <!------------------------>
+
+    <p>
+        <label for="password">Password </label>
+        <input type="password" id="password" name="password" formControlName="password">
+    </p>
+
+    <div
+        *ngIf="!password?.valid && (password?.dirty ||password?.touched)">
+        <div [hidden]="!password?.errors?.['required']">
+            A Password is required
+        </div>
+    </div>
+
+    <p>
+        <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+    </p>
+
+    <div class="loginFailure" [hidden]="isMessageHidden">{{loginFailedMsg}}</div>
+
+</form>

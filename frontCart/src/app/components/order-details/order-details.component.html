@@ -1,0 +1,18 @@
+<div class="orderDetails" *ngIf="order; else orderMissing">
+    <p>Order No: {{order.orderId}}<p>
+    <p>Order Date: {{order.placedAt | date:'short'}}<p></p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let product of order.productList">
+            <td>{{product.name}}</td>
+            <td>{{product.price}} €</td>
+        </tr>
+    </table>
+    <p>Total Price: {{order.totalPrice.toFixed(2)}} €</p>
+</div>
+<ng-template #orderMissing>
+    No order.
+</ng-template>

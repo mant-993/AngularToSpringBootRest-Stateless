@@ -1,0 +1,10 @@
+<div class="profile" *ngIf="profileData; else profileDataMissing">
+    <p>FullName: {{profileData.fullname}}</p>
+    <p>Street: {{profileData.street}}</p>
+    <p>City: {{profileData.city}}</p>
+    <p>State: {{profileData.state}}</p>
+    <p>Phone Number: {{profileData.phoneNumber}}</p>
+</div>
+<ng-template #profileDataMissing>
+    No information available.
+</ng-template>
